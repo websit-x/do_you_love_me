@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
-<title>تحبيني؟</title>
+<title>Do you love me?</title>
 <style>
 :root{--rose:#e0245e;--deep:#a8123f;--ink:#5b1230;--blue:#8fd3ff}
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html,body{margin:0;height:100%}
 body{
   background:radial-gradient(130% 90% at 50% 0%,#fff0f4 0%,#ffd6e2 55%,#ffbfd2 100%);
-  font-family:"Segoe UI",Tahoma,"Noto Sans Arabic",system-ui,sans-serif;
+  font-family:"Segoe UI",Tahoma,system-ui,sans-serif;
   color:var(--ink);overflow:hidden;
   -webkit-user-select:none;user-select:none;touch-action:manipulation;
 }
@@ -124,7 +124,7 @@ svg[data-mood="sob"] .drop{animation-duration:.8s}
     </div>
     <h2 id="win"></h2>
     <p id="sub"></p>
-    <button id="again" class="btn" type="button">من جديد</button>
+    <button id="again" class="btn" type="button">Again</button>
   </section>
 </div>
 <div id="fx"></div>
@@ -133,27 +133,27 @@ svg[data-mood="sob"] .drop{animation-duration:.8s}
 (function () {
 "use strict";
 
-/* ====== عدّل هنا ====== */
-var HER_NAME = "";                    // اسمها (اختياري) مثال: "سارة"
-var QUESTION = "تحبيني؟";
-var YES_TEXT = "نعم";
-var NO_TEXT  = "لا";
-var WIN_TEXT = "عرفت! ";
-var SUB_TEXT = "والدب نسي كل دموعه";
+/* ====== EDIT HERE ====== */
+var HER_NAME = "";                    // Her name (optional) e.g., "Sarah"
+var QUESTION = "Do you love me?";
+var YES_TEXT = "Yes";
+var NO_TEXT  = "No";
+var WIN_TEXT = "I knew it! ";
+var SUB_TEXT = "And the bear forgot all his tears";
 var MSGS = [
-  "أنا بانتظار جوابك...",
-  "هاه؟ ليش لا؟ 🥺",
-  "فكّري مرة ثانية... 😢",
-  "قلبي انكسر 💔",
-  "الدب يبكي بسببك 😭",
-  "بالله عليك، قولي نعم 🥹",
-  "دموعي صارت نهر 🌊",
-  "ما راح أتحمل أكثر...",
-  "اضغطي على نعم... أرجوكِ 🙏",
-  "زر لا تعب من الهروب 😮‍💨",
-  "ما بقي إلا نعم ♥"
+  "I'm waiting for your answer...",
+  "Huh? Why no? 🥺",
+  "Think again... 😢",
+  "My heart is broken 💔",
+  "The bear is crying because of you 😭",
+  "Please, say yes 🥹",
+  "My tears became a river 🌊",
+  "I can't take this anymore...",
+  "Click yes... please 🙏",
+  "The 'No' button is tired of running 😮‍💨",
+  "Only 'Yes' is left ♥"
 ];
-var MAX_NO = 10;                      // بعد كم محاولة يختفي زر لا
+var MAX_NO = 10;                      // After how many attempts the 'No' button disappears
 /* ===================== */
 
 function $(id){return document.getElementById(id);}
@@ -210,7 +210,7 @@ $("svgB").innerHTML=bear(GIRL);
 var puddle=bearSvg.querySelector(".puddle");
 
 /* ---------- texts ---------- */
-$("q").textContent=(HER_NAME?HER_NAME+"، ":"")+QUESTION;
+$("q").textContent=(HER_NAME?HER_NAME+", ":"")+QUESTION;
 $("yes").innerHTML=YES_TEXT+" &#9829;";
 $("no").textContent=NO_TEXT;
 $("win").textContent=WIN_TEXT;
@@ -305,7 +305,7 @@ yes.addEventListener("click",function(){
   no.classList.add("gone");
   bearSvg.setAttribute("data-mood","love");
   puddle.setAttribute("rx",0);puddle.setAttribute("ry",0);
-  say("يييي ♥");
+  say("Yaaay ♥");
   yes.style.pointerEvents="none";
   burst(22);
   setTimeout(function(){
